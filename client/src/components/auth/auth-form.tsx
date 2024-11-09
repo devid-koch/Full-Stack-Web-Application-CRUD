@@ -75,7 +75,7 @@ export default function AuthForm() {
                                     name="email"
                                     rules={ [{ required: true, message: 'Please input your email!' }] }
                                 >
-                                    <Input prefix={ <MailOutlined /> } placeholder="Email" />
+                                    <Input prefix={ <MailOutlined /> } type="email" placeholder="Email" />
                                 </Form.Item>
                                 <Form.Item
                                     name="password"
@@ -112,7 +112,7 @@ export default function AuthForm() {
                                         { type: 'email', message: 'Please enter a valid email!' }
                                     ] }
                                 >
-                                    <Input prefix={ <MailOutlined /> } placeholder="Email" />
+                                    <Input prefix={ <MailOutlined /> } type="email" placeholder="Email" />
                                 </Form.Item>
                                 <Form.Item
                                     name="password"

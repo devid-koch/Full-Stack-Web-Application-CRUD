@@ -6,10 +6,16 @@ const userRoutes = require('./routes/userRoutes');
 const cors = require('cors');
 const path = require('path');
 
+const corsOptions = {
+  origin: ['https://full-stack-web-application-crud-1.onrender.com/'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
-app.use(bodyParser.json()); 
-app.use(cors());
+app.use(bodyParser.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
