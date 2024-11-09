@@ -7,7 +7,7 @@ const cors = require('cors');
 const path = require('path');
 
 const corsOptions = {
-  origin: ['https://full-stack-web-application-crud-1.onrender.com/'],
+  origin: ['https://full-stack-web-application-crud-1.onrender.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
