@@ -18,9 +18,9 @@ exports.updateProfile = async (req, res) => {
   }
 
   if (req.file) {
-    const host = req.get('host');
-    const profilePictureURL = `${req.protocol}://${host}/uploads/${req.file.filename}`;
-    updates.profile_picture = profilePictureURL;
+    // const host = req.get('host');
+    // const profilePictureURL = `${req.protocol}://${host}/uploads/${req.file.filename}`;
+    updates.profile_picture = req.file.path;
   }
   
   await knex('users').where({ id: userId }).update(updates);

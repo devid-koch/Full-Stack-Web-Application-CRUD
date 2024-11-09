@@ -23,12 +23,12 @@
 
       const [newUser] =await knex('users').insert({ email, name, password: hashedPassword }).returning('*');
 
-      const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET, { expiresIn: '1d'});
+      const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET, { expiresIn: '2d'});
       res.status(201).json({ message: 'User created',
         token: token,
        });
     } catch (error) {
-      res.status(400).json({ message: 'User creation failed"', error: error.message });
+      res.status(400).json({ message: 'User creation failed', error: error.message });
     }
   };
 
